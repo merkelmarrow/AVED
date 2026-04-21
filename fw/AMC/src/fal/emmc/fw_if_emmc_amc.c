@@ -383,7 +383,7 @@ static uint32_t ulEmmcWrite( void *pvFwIf,
                             /* update counts */
                             ulCurrentBytesWritten = ( ulBlockCount * HAL_EMMC_BLOCK_SIZE );
                             ulTotalBytesWritten = ulTotalBytesWritten + ulCurrentBytesWritten;
-                            ulBytesToWrite = ulBytesToWrite - ulTotalBytesWritten;
+                            ulBytesToWrite = ulBytesToWrite - ulCurrentBytesWritten;
                         }
                     }
 
@@ -533,7 +533,7 @@ static uint32_t ulEmmcRead( void *pvFwIf,
                             /* update counts */
                             ulCurrentBytesRead = ( ulBlockCount * HAL_EMMC_BLOCK_SIZE );
                             ulTotalBytesRead = ulTotalBytesRead + ulCurrentBytesRead;
-                            ulBytesToRead = ulBytesToRead - ulTotalBytesRead;
+                            ulBytesToRead = ulBytesToRead - ulCurrentBytesRead;
                         }
                     }
 
